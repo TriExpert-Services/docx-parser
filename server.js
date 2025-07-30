@@ -7,7 +7,7 @@ const metricsRoutes = require('./routes/metrics');
 const metricsCollector = require('./utils/metricsCollector');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3330;
 
 // Middlewares de seguridad y configuración
 app.use(helmet());

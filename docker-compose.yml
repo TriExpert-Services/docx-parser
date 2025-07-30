@@ -5,10 +5,10 @@ services:
     build: .
     container_name: mammoth-docx-parser
     ports:
-      - "3000:3000"
+      - "3330:3330"
     environment:
       - NODE_ENV=production
-      - PORT=3000
+      - PORT=3330
     volumes:
       # Opcional: montar logs
       - ./logs:/app/logs

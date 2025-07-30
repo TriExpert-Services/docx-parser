@@ -93,7 +93,7 @@ Información del API y endpoints disponibles.
 docker build -t mammoth-parser .
 
 # Ejecutar el contenedor
-docker run -p 3000:3000 mammoth-parser
+docker run -p 3330:3330 mammoth-parser
 ```
 
 ### Uso con Docker Compose:
@@ -115,7 +115,7 @@ docker-compose down
 1. Usa el nodo **HTTP Request**
 2. Configura:
    - **Method**: POST
-   - **URL**: `http://localhost:3000/api/parse`
+   - **URL**: `http://localhost:3330/api/parse`
    - **Body**: Form-Data
    - **Key**: `file`, **Value**: (archivo .docx)
 
@@ -123,7 +123,7 @@ docker-compose down
 1. Usa el nodo **HTTP Request**
 2. Configura:
    - **Method**: POST
-   - **URL**: `http://localhost:3000/api/parse-base64`
+   - **URL**: `http://localhost:3330/api/parse-base64`
    - **Body**: JSON
    ```json
    {
@@ -148,7 +148,7 @@ npm start
 ## 📝 Configuración
 
 Variables de entorno disponibles:
-- `PORT`: Puerto del servidor (default: 3000)
+- `PORT`: Puerto del servidor (default: 3330)
 - `NODE_ENV`: Entorno de ejecución
 
 ## 🔒 Seguridad
@@ -198,5 +198,5 @@ El servicio incluye:
 - Ajusta los límites en la configuración
 
 ### Servicio no responde
-- Verifica el health check: `curl http://localhost:3000/health`
+- Verifica el health check: `curl http://localhost:3330/health`
 - Revisa los logs: `docker-compose logs mammoth-parser`
