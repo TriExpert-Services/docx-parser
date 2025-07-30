@@ -115,9 +115,27 @@ docker-compose down
 1. Usa el nodo **HTTP Request**
 2. Configura:
    - **Method**: POST
-   - **URL**: `http://localhost:3330/api/parse`
+   - **URL**: `http://parser.traduccionesrtexpert.com/api/parse`
    - **Body**: Form-Data
-   - **Key**: `file`, **Value**: (archivo .docx)
+   - **Parameter Type**: Form Data
+   - **Name**: `file`
+   - **Value**: `{{ $binary.data }}` (si viene de un nodo anterior que descargó el archivo)
+
+### Configuración correcta en n8n para archivo descargado:
+
+1. **HTTP Request Node configuración:**
+   - **Method**: POST
+   - **URL**: `http://parser.traduccionesrtexpert.com/api/parse`
+   - **Send Body**: ✅ Activado
+   - **Body Content Type**: Form-Data
+
+2. **Body Parameters:**
+   - **Parameter Type**: Form Data
+   - **Name**: `file`
+   - **Value**: 
+     - Si el archivo viene del nodo anterior: `{{ $binary.data }}`
+     - Si tienes múltiples archivos: `{{ $binary.data.archivo }}`
+     - Si el nodo anterior se llama "Download": `{{ $node["Download"].binary.data }}`
 
 ### Método 2: Base64 (recomendado para n8n)
 1. Usa el nodo **HTTP Request**
