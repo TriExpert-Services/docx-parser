@@ -181,6 +181,13 @@ El servicio incluye:
 - Estadísticas por endpoint
 - Historial de actividad reciente
 - Uptime del servicio
+
+## 🔄 **Cómo acceder:**
+
+1. **Dashboard principal**: `http://localhost:3330/metrics`
+2. **Datos JSON**: `http://localhost:3330/metrics/data`
+3. **Prometheus**: `http://localhost:3330/metrics/prometheus`
+
 ## ⚡ Rendimiento
 
 - Procesamiento en memoria para mejor rendimiento
